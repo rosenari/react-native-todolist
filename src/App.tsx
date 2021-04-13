@@ -1,6 +1,8 @@
 import React from 'react';
 import Styled from "styled-components/native";
 import type { ReactNode } from 'react'
+import { TodoListContextProvider } from "~/Context/TodoListContext"
+import Todo from "~/screen/Todo";
 
 const Container = Styled.View`
   flex:1;
@@ -9,9 +11,11 @@ const Container = Styled.View`
 
 const App: () => ReactNode = () => {
   return (
-    <Container>
-
-    </Container>
+    <TodoListContextProvider>
+      <Container>
+        <Todo />
+      </Container>
+    </TodoListContextProvider>
   );
 };
 
